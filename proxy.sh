@@ -3,7 +3,7 @@
 # Script to randomly set Background from files in a directory
 
 # Directory Containing Pictures
-DIR="/src/bin"
+DIR="/src/lib"
 
 # Command to Select a random jpg file from directory
 # Delete the *.jpg to select any file but it may return a folder
