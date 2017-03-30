@@ -1,13 +1,9 @@
-#!/bin/bash
+WALLS_PATH=./src
+cd $WALLS_PATH
 
-# Script to randomly set Background from files in a directory
-
-# Directory Containing Pictures
-DIR="/src/lib"
-
-# Command to Select a random jpg file from directory
-# Delete the *.jpg to select any file but it may return a folder
-PIC=$(ls $DIR/*.jpg | shuf -n1)
-
-# Command to set Background Image
-gconftool -t string -s /desktop/gnome/background/picture_filename $PIC
+while [ 1 ]; do
+    for NEW_WALL in "$WALLS_PATH"/*; do
+        gsettings set org.gnome.desktop.background picture-uri "file://${NEW_WALL}"
+        sleep 1800
+    done
+done
